@@ -1,20 +1,27 @@
 
 
-public class Account() {
+public class Account {
 
 
-public Account(int accNum, User user, int balance) {
+private int accNum;
+private int balance;
+private int withdrawalLimit;
 
-int accNum = accNum
-int balance = balance;
-int withdrawalLimit = 250;
+public Account(int accNum, int balance) {
+
+this.accNum = accNum;
+this.balance = balance;
+this.withdrawalLimit = 250;
 }
 
-public int withdrawCash(int value) {
-
+public int withdrawFunds(int value) {
+balance = balance - value;
   return value;
 }
 
+public int getAccNum() {
+  return this.accNum;
+}
 
 }
 

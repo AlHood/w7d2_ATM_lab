@@ -1,21 +1,30 @@
 
 
-public class ATM() {
+public class Atm {
 
-public ATM() {
-int cashReserve = 500;
+private int cashReserve;
+
+
+public Atm() {
+this.cashReserve = 500;
 
 }
+
+
 
 public void fillUp() {
 this.cashReserve = 500;
 }
 
-public int deliverCash() {
-
-
+public int deliverCash(int value) {
+this.cashReserve = cashReserve - value;
+return value;
 }
 
+public int reportCashReserve() {
+return this.cashReserve;
+
+}
 
 }
 
