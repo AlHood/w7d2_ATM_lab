@@ -26,7 +26,7 @@ public class Bank {
     }
 
     public int requestedCash(int request, int accountCard) {
-        if (request > 250 || request < 0) { return 0;}
+      if (request > 250 || request < 0) { return 0;}
 
       for (Account account : accounts) {
         if (account.getAccNum() == accountCard) {
@@ -34,11 +34,13 @@ public class Bank {
 
           return this.atm.deliverCash(request2);
 
-        }}
-        return 0;
+        }
+
       }
-
-
-
-
+      return 0;
     }
+
+
+
+
+  }

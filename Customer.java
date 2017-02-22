@@ -15,7 +15,7 @@ public Customer(String name, int accountCard, int wallet) {
 }
 
 public void placeCashInWallet(int cash) {
-this.wallet = this.wallet + cash;
+this.wallet += cash;
 }
 
 public int checkWallet() {

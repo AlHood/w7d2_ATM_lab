@@ -44,7 +44,7 @@ assertEquals(100, result);
 @Test 
 public void customerIsAWrongUn() {
 customer2.requestCash(100, bank);
-result = customer.checkWallet();
+result = customer2.checkWallet();
 assertEquals(50, result);
 }
 
@@ -54,6 +54,18 @@ customer.requestCash(400, bank);
 result = customer.checkWallet();
 assertEquals(0, result);
 
+}
+
+@Test
+public void canCheckWallet() {
+result = customer2.checkWallet();
+assertEquals(50, result);
+}
+
+@Test
+public void canPlaceCashInWalletCorrectly() {
+  customer2.placeCashInWallet(250);
+  assertEquals(300, customer2.checkWallet());
 }
 
 }
