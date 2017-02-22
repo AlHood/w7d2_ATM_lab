@@ -26,6 +26,8 @@ public class Bank {
     }
 
     public int requestedCash(int request, int accountCard) {
+        if (request > 250 || request < 0) { return 0;}
+
       for (Account account : accounts) {
         if (account.getAccNum() == accountCard) {
           int request2 = account.withdrawFunds(request);

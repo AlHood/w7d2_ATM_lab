@@ -9,6 +9,7 @@ public class CustomerTest {
   Account account;
  int result;
 String stringResult;
+Customer customer2;
 
   @Before
   public void before() {
@@ -17,6 +18,7 @@ String stringResult;
 
     account = new Account(1001, 500);
     bank.addAccount(account);
+    customer2 = new Customer("Vlad", 999, 50);
 
   }
 
@@ -37,6 +39,21 @@ public void canDoTheThing() {
 customer.requestCash(100, bank);
 result = customer.checkWallet();
 assertEquals(100, result);
+}
+
+@Test 
+public void customerIsAWrongUn() {
+customer2.requestCash(100, bank);
+result = customer.checkWallet();
+assertEquals(50, result);
+}
+
+@Test
+public void ivanGetsGreedy() {
+customer.requestCash(400, bank);
+result = customer.checkWallet();
+assertEquals(0, result);
+
 }
 
 }
